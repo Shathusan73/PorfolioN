@@ -7,7 +7,7 @@ import Header from "./pages/Header/Header";
 import Hero from "./pages/Hero/Hero";
 import Skills from "./pages/Skills/Skills";
 import Education from "./pages/Education/Education";
-
+import ProjectDetails from "./components/ProjectDetail";
 import { Route, Routes } from "react-router-dom";
 
 export default function App() {
@@ -35,6 +35,7 @@ export default function App() {
           <Route path="/education" element={<Education />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/project/:id" element={<ProjectDetails />} />
         </Routes>
       )}
     </>

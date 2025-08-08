@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import EducationLoader from "@/components/ui/EducationLoader";
 import {
   Star,
   Award,
@@ -15,25 +14,26 @@ const EducationSection = () => {
 
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Natore Textile Institute",
-      mascot: "📘",
-      year: "2019-2021",
-      achievements: ["GPA: 4.89", "Subject: Science"],
-      skills: ["Mathematics", "Physics", "Chemistry", "Biology"],
+      degree: "BSc (Hons) Software Engineering",
+      school: "Cardiff Metropolitan University (via ICBT)",
+      mascot: "🎓",
+      year: "2024 ",
+      achievements: ["Current GPA: 2.1", "Second Upper"],
+      skills: ["Software Development", "System Design", "Database Management", "Cloud Computing"],
       description:
-        "Focused on core science subjects with emphasis on practical laboratory work and scientific research methodologies.",
+        "Comprehensive degree program covering modern software engineering principles, agile methodologies, and full-stack development.",
     },
     {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Dottopara Model Degree College",
-      mascot: "📗",
-      year: "2021-2023",
-      achievements: ["GPA: 4.25", "Subject: Arts"],
-      skills: ["Literature", "Social Studies", "Economics", "History"],
+      degree: "Higher National Diploma in Software Engineering",
+      school: "ICBT Campus",
+      mascot: "💻",
+      year: "2022 - 2023",
+      achievements: ["Merit Pass", "Best Project Award 2022"],
+      skills: ["Programming Fundamentals", "Web Development", "Mobile App Development", "Software Testing"],
       description:
-        "Developed strong analytical and critical thinking skills through comprehensive study of humanities and social sciences.",
+        "Practical-focused diploma program emphasizing hands-on software development skills and industry-standard practices.",
     },
+  
   ];
 
   const containerVariants = {
@@ -59,7 +59,7 @@ const EducationSection = () => {
   };
 
   return (
-    <section className="min-h-screen relative overflow-hidden py-40 bg-[#04081A]">
+    <section className="min-h-screen relative overflow-hidden py-40 bg-[#04081A]" id="education">
       {/* Grid Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:50px_50px]" />
@@ -75,11 +75,10 @@ const EducationSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent mb-6">
-            Educational Journey
+            Academic Qualifications
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-            Discover how academic excellence shapes innovative thinking and
-            professional growth.
+            My formal education journey in software engineering and technology
           </p>
         </motion.div>
 
@@ -87,7 +86,7 @@ const EducationSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2  gap-8"
         >
           {educationData.map((edu, index) => (
             <motion.div
@@ -141,15 +140,21 @@ const EducationSection = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {edu.skills.map((skill, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+                <div className="space-y-3">
+                  <h4 className="text-sm font-semibold text-white flex items-center gap-2">
+                    <GraduationCap className="w-4 h-4 text-blue-400" />
+                    Core Skills Gained
+                  </h4>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.skills.map((skill, i) => (
+                      <span
+                        key={i}
+                        className="px-2 py-1 text-xs rounded bg-blue-500/10 text-blue-300"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </motion.div>

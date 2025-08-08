@@ -8,7 +8,6 @@ import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
 import About from "../About";
 
-// Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20">
@@ -43,40 +42,41 @@ const GridBackground = () => {
 
 export default function Hero() {
   const words = [
-    "Full-Stack Developer & UI/UX Enthusiast",
-    "JavaScript Developer & Creator of Olova.js",
-    "Learning MARN Stack",
-    "Linux & GitHub for DevOps Enthusiast",
+    "Project Coordinator & Full Stack Developer",
+    "React.js & Next.js Specialist",
+    "Agile Methodology Practitioner",
+    "Team Collaboration Expert"
   ];
 
   const [code] = useState(`
 const profile = {
-    name: 'Nazmul Hossain',
-    title: 'Full-Stack Developer | Cloud Enthusiast | Problem Solver',
+    name: 'Sritharar Shathusan',
+    title: 'Project Coordinator | Full Stack Developer',
     skills: [
-        'React', 'NextJS', 'Redux', 'Express',
-        'MySQL', 'MongoDB', 'Docker', 'AWS', 'TypeScript',
-        'GraphQL', 'Git', 'Linux', 'Discord Development'
+        'React.js', 'Next.js', 'Node.js', 'JavaScript',
+        'TypeScript', 'Tailwind CSS', 'RESTful APIs', 
+        'Agile Methodologies', 'Project Management',
+        'Team Collaboration', 'CI/CD Pipelines'
     ],
-    hardWorker: true,
-    quickLearner: true,
-    problemSolver: true,
-    yearsOfExperience: 4, 
-    hireable: function() {
-        return (
-            this.hardWorker &&
-            this.problemSolver &&
-            this.skills.length >= 5 &&
-            this.yearsOfExperience >= 3
-        );
-    }
+    experience: {
+        microwe: {
+            roles: [
+                'Project Coordinator (Current)',
+                'Associate Software Engineer',
+                'Frontend Developer Intern'
+            ],
+            duration: '1 yr 11 mos'
+        }
+    },
+    education: 'BSc in Computer Science',
+    location: 'Jaffna, Sri Lanka',
+    availableForHire: true
 };
   `);
 
   useEffect(() => {
     Prism.highlightAll();
 
-    // Add CSS animation for grid and dots
     const style = document.createElement("style");
     style.textContent = `
       @keyframes gridPulse {
@@ -84,12 +84,6 @@ const profile = {
         50% { opacity: 0.3; }
       }
       
-      @keyframes dotPulse {
-        0%, 100% { opacity: 0.2; transform: scale(0.8); }
-        50% { opacity: 0.5; transform: scale(1.2); }
-      }
-      
-      /* Media query for 1366x768 resolution */
       @media screen and (width: 1366px) and (height: 768px), 
              screen and (width: 1367px) and (height: 768px),
              screen and (width: 1368px) and (height: 769px) {
@@ -107,7 +101,6 @@ const profile = {
     `;
     document.head.appendChild(style);
 
-    // Apply extra padding for 1366x768 resolution
     const checkResolution = () => {
       const isTargetResolution =
         window.innerWidth >= 1360 &&
@@ -116,10 +109,7 @@ const profile = {
         window.innerHeight <= 775;
 
       if (isTargetResolution) {
-        document.documentElement.style.setProperty(
-          "--hero-padding-top",
-          "12rem"
-        );
+        document.documentElement.style.setProperty("--hero-padding-top", "12rem");
       } else {
         document.documentElement.style.setProperty("--hero-padding-top", "0");
       }
@@ -142,21 +132,11 @@ const profile = {
           style={{ paddingTop: "var(--hero-padding-top, 0)" }}
         >
           <div className="absolute inset-0"></div>
-
-          {/* Choose one of these background options */}
           <GridBackground />
-
-          {/* Or keep the original backgrounds if you prefer */}
-          {/* <HexagonBackground /> */}
-          {/* <AnimatedGrid /> */}
-          {/* <DotBackground /> */}
-
-          {/* Meteors Effect */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <Meteors number={10} />
           </div>
 
-          {/* Main content container */}
           <div
             className="container mx-auto flex flex-col lg:flex-row items-center justify-between relative z-10 py-8 md:py-10 lg:py-12 md:pt-28 xl:pt-28"
             style={{
@@ -169,21 +149,17 @@ const profile = {
                   : "",
             }}
           >
-            {/* Left column - Text content */}
             <div className="w-full lg:w-1/2 mb-12 lg:mb-0 animate__animated animate__fadeInLeft relative">
-              {/* Decorative blurs */}
               <div className="absolute hidden lg:-top-20 lg:-left-20 lg:block w-48 h-48 lg:w-64 lg:h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
               <div className="absolute hidden lg:block lg:top-40 lg:-right-20 w-48 h-48 lg:w-64 lg:h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
 
-              {/* Welcome badge */}
               <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 mb-6 sm:mb-8 animate__animated animate__fadeInDown animate__delay-1s">
                 <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
                 <span className="text-gray-300 text-xs sm:text-sm font-medium">
-                  Welcome to my universe
+                  Professional Portfolio
                 </span>
               </div>
 
-              {/* Name section */}
               <div className="relative mb-6 sm:mb-8">
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight">
                   <SparklesText text="Hello" />
@@ -198,7 +174,6 @@ const profile = {
                 <div className="absolute -z-10 top-1/2 -translate-y-1/2 left-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-blue-500/20 rounded-full blur-2xl animate-pulse"></div>
               </div>
 
-              {/* Role badge */}
               <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-blue-500/10 to-teal-500/10 border border-blue-500/20 mb-6 sm:mb-8 backdrop-blur-sm animate__animated animate__fadeInUp animate__delay-1s">
                 <i className="fas fa-rocket text-blue-400 animate-bounce text-sm sm:text-base"></i>
                 <span>
@@ -209,63 +184,57 @@ const profile = {
                 </span>
               </div>
 
-              {/* Description */}
               <div className="relative mb-8 sm:mb-12 max-w-xl">
                 <p className="text-base sm:text-xl text-gray-300/90 leading-relaxed">
-                  JavaScript lover 🚀 | OlovaJS creator 🔧 | Crafting frameworks
-                  and coding the future 💻✨
+                  Project Coordinator and Full Stack Developer specializing in React.js, Next.js, 
+                  and modern web technologies. Currently at Microwe with experience progressing 
+                  from Frontend Developer to Project Coordinator.
                 </p>
               </div>
 
-              {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 animate__animated animate__fadeInUp animate__delay-2s">
-                {/* View Projects Button */}
                 <a
-                  href="https://github.com/seraprogrammer"
+                  href="#portfolio"
                   className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-500 to-teal-400 p-0.5 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>Available for Hire</span>
+                      <span>View Projects</span>
                       <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
                     </span>
                   </span>
                 </a>
 
-                {/* Contact Button */}
                 <a
-                  href="#"
+                  href="#contact"
                   className="group relative inline-flex items-center justify-center gap-3 p-0.5 rounded-xl bg-gradient-to-r from-gray-800 to-gray-700 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_#60A5FA]"
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 border border-gray-700/50 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-gray-800 group-hover:to-gray-700">
                     <span className="relative flex items-center justify-center gap-2 text-gray-300 font-medium group-hover:text-white">
-                      <span>Get Resume</span>
+                      <span>Contact Me</span>
                       <i className="fas fa-envelope transform transition-all duration-300 group-hover:rotate-12"></i>
                     </span>
                   </span>
                 </a>
               </div>
 
-              {/* Floating badges */}
               <div className="hidden lg:block absolute left-[5.5rem] top-[2.3rem] animate-float-slow">
                 <div className="px-4 py-2 rounded-lg bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 text-purple-400">
-                  <i className="fas fa-wand-magic-sparkles"></i>&nbsp;&nbsp;UI
-                  Magic
+                  <i className="fas fa-project-diagram"></i>&nbsp;&nbsp;Project Management
                 </div>
               </div>
               <div className="hidden lg:block absolute right-10 top-20 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-blue-500/10 backdrop-blur-sm border border-blue-500/20 text-blue-400">
-                  <i className="fas fa-code"></i>&nbsp;&nbsp;Clean Code
+                  <i className="fas fa-code"></i>&nbsp;&nbsp;Full Stack
                 </div>
               </div>
               <div className="hidden lg:block absolute top-[17rem] left-[70%] transform -translate-x-1/2 animate-float">
                 <div className="px-4 py-2 rounded-lg bg-amber-500/10 backdrop-blur-sm border border-amber-500/20 text-amber-400">
-                  <i className="fas fa-lightbulb"></i>&nbsp;&nbsp;Innovation
+                  <i className="fas fa-users"></i>&nbsp;&nbsp;Team Collaboration
                 </div>
               </div>
             </div>
 
-            {/* Right column - Code window */}
             <div className="w-full lg:w-1/2 animate__animated animate__fadeInDown animate__delay-0.1s">
               <div className="gradient-border">
                 <div className="code-window bg-[#091121]">
@@ -275,7 +244,7 @@ const profile = {
                     <div className="window-dot bg-green-500"></div>
                     <span className="ml-2 text-sm text-gray-400 flex items-center gap-2">
                       <i className="fas fa-code"></i>
-                      developer.js
+                      profile.js
                     </span>
                   </div>
                   <pre className="language-javascript">
@@ -287,30 +256,21 @@ const profile = {
           </div>
         </section>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce flex flex-col items-center gap-2">
-          <span className="text-gray-400 text-sm flex items-center gap-2">
-            <i className="fas fa-mouse text-blue-400"></i>
-            About me
-          </span>
-          <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
-        </div>
-        {/* <PortfolioPage /> */}
-
         <About/>
-<Portofolio/>
+        <Portofolio/>
+        
         <footer>
-            <center>
-              <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
-              <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
-                © 2025{" "}
-                <a href="https://flowbite.com/" className="hover:underline">
-                  Sri Shathu™
-                </a>
-                . All Rights Reserved.
-              </span>
-            </center>
-          </footer>
+          <center>
+            <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+            <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+              © 2025{" "}
+              <a href="#" className="hover:underline">
+                Sritharar Shathusan™
+              </a>
+              . All Rights Reserved.
+            </span>
+          </center>
+        </footer>
       </main>
     </>
   );

@@ -7,18 +7,18 @@ import { Code, Award, Boxes, ChevronDown, ChevronUp } from "lucide-react";
 import projects from "../components/constants/ProjectDetails";
 
 const techStacks = [
-  { icon: "html.svg", language: "HTML" },
-  { icon: "css.svg", language: "CSS" },
-  { icon: "javascript.svg", language: "JavaScript" },
-  { icon: "tailwind.svg", language: "Tailwind CSS" },
-  { icon: "reactjs.svg", language: "ReactJS" },
-  { icon: "vite.svg", language: "Vite" },
-  { icon: "nodejs.svg", language: "Node JS" },
-  { icon: "bootstrap.svg", language: "Bootstrap" },
-  { icon: "firebase.svg", language: "Firebase" },
-  { icon: "MUI.svg", language: "Material UI" },
-  { icon: "vercel.svg", language: "Vercel" },
-  { icon: "SweetAlert.svg", language: "SweetAlert2" },
+  { icon: 'https://cdn.simpleicons.org/html5', language: "HTML" },
+  // { icon: 'https://cdn.simpleicons.org/css3', language: "CSS" },
+  { icon: 'https://cdn.simpleicons.org/javascript', language: "JavaScript" },
+  { icon: 'https://cdn.simpleicons.org/tailwindcss', language: "Tailwind CSS" },
+  { icon: 'https://cdn.simpleicons.org/react', language: "ReactJS" },
+  { icon: 'https://cdn.simpleicons.org/vite', language: "Vite" },
+  { icon: 'https://cdn.simpleicons.org/nodedotjs', language: "Node JS" },
+  { icon: 'https://cdn.simpleicons.org/bootstrap', language: "Bootstrap" },
+  { icon: 'https://cdn.simpleicons.org/firebase', language: "Firebase" },
+  { icon: 'https://cdn.simpleicons.org/mui', language: "Material UI" },
+  { icon: 'https://cdn.simpleicons.org/vercel', language: "Vercel" },
+
 ];
 
 const ToggleButton = ({ onClick, isShowingMore }) => (

@@ -1,10 +1,11 @@
 import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import { Briefcase, Code2, Cpu, Layers } from "lucide-react";
 
 const ExperienceCard = ({
   title,
   company,
   period,
+  location,
   description,
   icon: Icon,
 }) => (
@@ -27,15 +28,20 @@ const ExperienceCard = ({
         <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
           {title}
         </h3>
-        <div className="flex justify-between items-center text-gray-300">
-          <span className="font-semibold text-blue-400">{company}</span>
-          <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
-            {period}
-          </span>
+        <div className="flex flex-col gap-1">
+          <div className="flex justify-between items-center text-gray-300">
+            <span className="font-semibold text-blue-400">{company}</span>
+            <span className="text-sm font-mono bg-blue-500/10 px-3 py-1 rounded-full">
+              {period}
+            </span>
+          </div>
+          <p className="text-sm text-gray-400">{location}</p>
         </div>
-        <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed">
-          {description}
-        </p>
+        {description && (
+          <p className="text-gray-300 border-l-4 border-blue-500/50 pl-4 mt-4 leading-relaxed">
+            {description}
+          </p>
+        )}
       </div>
 
       {/* Decorative elements */}
@@ -54,28 +60,26 @@ const ExperienceCard = ({
 const ExperienceSection = () => {
   const experiences = [
     {
-      icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
-      description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+      icon: Briefcase,
+      title: "Full Stack Developer",
+      company: "Microwe",
+      period: "Feb 2025 - Present · 7 mos",
+      location: "Jaffna, Northern Province, Sri Lanka · On-site",
+      description: "",
     },
     {
-      icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
-      description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
+      icon: Briefcase,
+      title: "Associate Software Engineer",
+      company: "Microwe",
+      period: "Apr 2024 - Feb 2025 · 11 mos",
+      location: "Jaffna, Northern Province, Sri Lanka · On-site",
     },
     {
-      icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
-      description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+      icon: Briefcase,
+      title: "Frontend Developer",
+      company: "Microwe",
+      period: "Oct 2023 - Apr 2024 · 7 mos",
+      location: "Jaffna, Northern Province, Sri Lanka · On-site",
     },
   ];
 
@@ -109,12 +113,12 @@ const ExperienceSection = () => {
           <div className="flex flex-col items-center space-y-8 mb-20">
             <div className="relative">
               <h2 className="text-5xl md:text-7xl font-black text-transparent bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-center">
-                Professional Journey
+                Work Experience
               </h2>
               <div className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 blur-3xl rounded-full" />
             </div>
             <p className="text-lg md:text-xl text-gray-400 font-medium tracking-wide text-center max-w-2xl">
-              "Transforming ideas into digital reality, one project at a time"
+              "Full-time · 1 yr 11 mos at Microwe"
             </p>
           </div>
 
