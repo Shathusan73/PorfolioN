@@ -3,9 +3,10 @@ import Prism from "prismjs";
 import "prismjs/components/prism-javascript";
 import "@/assets/css/tomorrow.css";
 import Meteors from "@/components/ui/meteors";
-import PortfolioPage from "@/pages/About/About";
+import Portofolio from "../Portofolio";
 import SparklesText from "@/components/ui/sparkles-text";
 import { FlipWords } from "@/components/ui/flip-words";
+import About from "../About";
 
 // Grid Background - Replacing the HexagonBackground
 const GridBackground = () => {
@@ -190,7 +191,7 @@ const profile = {
                     I&apos;m
                     <span className="typing-effect gradient-text">
                       {" "}
-                      Nazmul Hossain
+                      Sritharar Shathusan
                     </span>
                   </span>
                 </h1>
@@ -225,7 +226,7 @@ const profile = {
                 >
                   <span className="block w-full px-6 sm:px-8 py-3 sm:py-4 rounded-[11px] bg-gray-900 transition-all duration-300 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-teal-400">
                     <span className="relative flex items-center justify-center gap-2 text-white font-medium">
-                      <span>Learn More</span>
+                      <span>Available for Hire</span>
                       <i className="fas fa-arrow-right transform transition-all duration-300 group-hover:translate-x-1"></i>
                     </span>
                   </span>
@@ -294,7 +295,22 @@ const profile = {
           </span>
           <i className="fas fa-chevron-down text-blue-400 text-xl"></i>
         </div>
-        <PortfolioPage />
+        {/* <PortfolioPage /> */}
+
+        <About/>
+<Portofolio/>
+        <footer>
+            <center>
+              <hr className="my-3 border-gray-400 opacity-15 sm:mx-auto lg:my-6 text-center" />
+              <span className="block text-sm pb-4 text-gray-500 text-center dark:text-gray-400">
+                © 2025{" "}
+                <a href="https://flowbite.com/" className="hover:underline">
+                  Sri Shathu™
+                </a>
+                . All Rights Reserved.
+              </span>
+            </center>
+          </footer>
       </main>
     </>
   );
